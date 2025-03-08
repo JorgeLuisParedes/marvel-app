@@ -31,6 +31,8 @@ export default tseslint.config(
 				{ allowConstantExport: true },
 			],
 			'prettier/prettier': 'warn', // Muestra advertencias si Prettier detecta problemas de formato
+			'prettier/prettier': ['error', { endOfLine: 'crlf' }],
 		},
 	}
 );
+

@@ -20,6 +20,7 @@ export const FilterCharacter = () => {
 								/>
 							</svg>
 						</div>
+
 						<input
 							type='search'
 							id='filterInput'
