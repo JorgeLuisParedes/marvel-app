@@ -1,9 +1,9 @@
-import { NavBar } from '../../ui';
+import { Header } from '../components';
 
 export const CharacterPage = () => {
 	return (
 		<>
-			<NavBar />
+			<Header />
 		</>
 	);
 };

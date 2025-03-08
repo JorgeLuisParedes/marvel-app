@@ -1,11 +1,10 @@
 import { Link } from 'react-router-dom';
-import { LogoMarvel } from './LogoMarvel';
-import { FullHeart } from './FullHeart';
+import { LogoMarvel, FullHeart } from '../../ui';
 
-export const NavBar = () => {
+export const Header = () => {
 	return (
 		<>
-			<nav className='bg-black fixed w-full z-20 top-0 start-0 pt-4 pb-4 pl-10 pr-10 justify-between flex'>
+			<nav className='bg-black fixed sm:relative w-full z-20 top-0 start-0 pt-4 pb-4 pl-10 pr-10 justify-between flex'>
 				<Link to='/'>
 					<LogoMarvel />
 				</Link>
