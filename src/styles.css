@@ -1,5 +1,10 @@
 @import 'tailwindcss';
 
+@theme {
+	--color-marvel: #EC1D24;
+}
+
+
 :root {
 	font-family: 'Roboto Condensed', sans-serif;
 }

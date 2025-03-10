@@ -2,7 +2,7 @@ export const FilterCharacter = () => {
 	return (
 		<>
 			<form className='mx-auto'>
-				<div className='relative'>
+				<div className='relative mb-3'>
 					<div className='absolute inset-y-0 start-0 flex items-center ps-0 pointer-events-none'>
 						<svg
 							className='w-4 h-4 text-black'
@@ -26,6 +26,9 @@ export const FilterCharacter = () => {
 						className='block w-full p-2 ps-8 uppercase border-b-black border-b placeholder-gray-400 text-black focus:ring-0 focus:outline-none'
 						placeholder='Search a character...'
 					/>
+				</div>
+				<div>
+					<span className='uppercase'>50 results</span>
 				</div>
 			</form>
 		</>
