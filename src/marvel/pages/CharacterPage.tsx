@@ -1,9 +1,10 @@
-import { Header } from '../components';
+import { CharacterDetails, Header } from '../components';
 
 export const CharacterPage = () => {
 	return (
 		<>
 			<Header />
+			<CharacterDetails />
 		</>
 	);
 };

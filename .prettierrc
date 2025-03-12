@@ -9,5 +9,6 @@
 	"bracketSpacing": true,
 	"bracketSameLine": true,
 	"arrowParens": "avoid",
-	"endOfLine": "crlf"
+	"endOfLine": "crlf",
+	"plugins": ["prettier-plugin-tailwindcss"]
 }

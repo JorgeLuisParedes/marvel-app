@@ -4,7 +4,7 @@ import { LogoMarvel, FullHeart } from '../../ui';
 export const Header = () => {
 	return (
 		<>
-			<nav className='bg-black fixed sm:relative w-full z-20 top-0 start-0 pt-4 pb-4 pl-10 pr-10 justify-between flex'>
+			<nav className='fixed start-0 top-0 z-20 flex w-full justify-between border-b border-[#333333] bg-black pt-4 pr-10 pb-4 pl-10 sm:relative'>
 				<Link to='/'>
 					<LogoMarvel />
 				</Link>

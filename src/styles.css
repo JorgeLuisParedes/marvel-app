@@ -1,10 +1,32 @@
 @import 'tailwindcss';
 
 @theme {
-	--color-marvel: #EC1D24;
+	--color-marvel: #ec1d24;
 }
-
 
 :root {
 	font-family: 'Roboto Condensed', sans-serif;
+}
+
+/* Estilos para Chrome, Edge y Safari */
+.custom-scrollbar::-webkit-scrollbar {
+	background-color: #e0e0e0;
+	/* Color de fondo gris claro */
+	height: 4px;
+	/* Grosor de la barra */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+	background-color: #ff0000;
+	/* Línea roja delgada */
+	border-radius: 0px;
+	/* Sin bordes redondeados */
+}
+
+/* Estilos para Firefox */
+.custom-scrollbar {
+	scrollbar-color: #ff0000 #e0e0e0;
+	/* (thumb rojo, track gris claro) */
+	scrollbar-width: thin;
+	/* Barra delgada */
 }

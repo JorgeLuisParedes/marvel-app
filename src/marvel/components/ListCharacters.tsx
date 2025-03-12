@@ -3,7 +3,7 @@ import { Character } from './Character';
 export const ListCharacters = () => {
 	return (
 		<>
-			<div className='mt-7 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4'>
+			<div className='mt-7 grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-7'>
 				<Character />
 				{/* <div className='group bg-black [clip-path:polygon(0_0,100%_0,100%_95%,93%_100%,100%_100%,0_100%)]'>
 					<div>

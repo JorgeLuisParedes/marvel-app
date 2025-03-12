@@ -8,7 +8,7 @@ export const Character = () => {
 						src='src\assets\images\img-1.jpg'
 					/>
 				</div>
-				<div className='relative p-4 pb-6 flex items-center justify-between'>
+				<div className='relative flex items-center justify-between p-4 pb-6'>
 					<span className='text-white'>IRON MAN</span>
 					<div>
 						<svg
@@ -23,7 +23,7 @@ export const Character = () => {
 							/>
 						</svg>
 					</div>
-					<div className='absolute -z-10 w-full h-1.5 bg-marvel top-0 left-0 group-hover:h-full transition-[height] duration-300 ease-in-out'></div>
+					<div className='bg-marvel absolute top-0 left-0 -z-10 h-1.5 w-full transition-[height] duration-300 ease-in-out group-hover:h-full'></div>
 				</div>
 			</div>
 		</>

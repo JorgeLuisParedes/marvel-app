@@ -12,7 +12,7 @@ export default tseslint.config(
 		extends: [
 			js.configs.recommended,
 			...tseslint.configs.recommended,
-			prettier, // Desactiva reglas de ESLint que pueden entrar en conflicto con Prettier
+			prettier,
 		],
 		files: ['**/*.{ts,tsx}'],
 		languageOptions: {
@@ -22,7 +22,7 @@ export default tseslint.config(
 		plugins: {
 			'react-hooks': reactHooks,
 			'react-refresh': reactRefresh,
-			prettier: prettierPlugin, // Añade el plugin de Prettier
+			prettier: prettierPlugin,
 		},
 		rules: {
 			...reactHooks.configs.recommended.rules,
@@ -30,8 +30,9 @@ export default tseslint.config(
 				'warn',
 				{ allowConstantExport: true },
 			],
-			'prettier/prettier': 'warn', // Muestra advertencias si Prettier detecta problemas de formato
+			'prettier/prettier': 'warn',
 			'prettier/prettier': ['error', { endOfLine: 'crlf' }],
+			'@typescript-eslint/no-unused-vars': 'warn',
 		},
 	}
 );

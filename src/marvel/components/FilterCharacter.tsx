@@ -3,9 +3,9 @@ export const FilterCharacter = () => {
 		<>
 			<form className='mx-auto'>
 				<div className='relative mb-3'>
-					<div className='absolute inset-y-0 start-0 flex items-center ps-0 pointer-events-none'>
+					<div className='pointer-events-none absolute inset-y-0 start-0 flex items-center ps-0'>
 						<svg
-							className='w-4 h-4 text-black'
+							className='h-4 w-4 text-black'
 							aria-hidden='true'
 							xmlns='http://www.w3.org/2000/svg'
 							fill='none'
@@ -23,7 +23,7 @@ export const FilterCharacter = () => {
 					<input
 						type='search'
 						id='filterInput'
-						className='block w-full p-2 ps-8 uppercase border-b-black border-b placeholder-gray-400 text-black focus:ring-0 focus:outline-none'
+						className='block w-full border-b border-b-black p-2 ps-8 text-black uppercase placeholder-gray-400 focus:ring-0 focus:outline-none'
 						placeholder='Search a character...'
 					/>
 				</div>
