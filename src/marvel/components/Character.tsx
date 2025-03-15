@@ -1,7 +1,12 @@
+import { Link } from 'react-router-dom';
+
 export const Character = () => {
 	return (
 		<>
-			<div className='group bg-black [clip-path:polygon(0_0,100%_0,100%_95%,93%_100%,100%_100%,0_100%)]'>
+			<Link
+				to={`/character/`}
+				key={1}
+				className='group bg-black [clip-path:polygon(0_0,100%_0,100%_95%,93%_100%,100%_100%,0_100%)]'>
 				<div>
 					<img
 						className='w-full object-cover'
@@ -10,7 +15,7 @@ export const Character = () => {
 				</div>
 				<div className='relative flex items-center justify-between p-4 pb-6'>
 					<span className='text-white'>IRON MAN</span>
-					<div>
+					<Link to={`/`}>
 						<svg
 							width='15'
 							height='14'
@@ -22,10 +27,10 @@ export const Character = () => {
 								fill='white'
 							/>
 						</svg>
-					</div>
+					</Link>
 					<div className='bg-marvel absolute top-0 left-0 -z-10 h-1.5 w-full transition-[height] duration-300 ease-in-out group-hover:h-full'></div>
 				</div>
-			</div>
+			</Link>
 		</>
 	);
 };

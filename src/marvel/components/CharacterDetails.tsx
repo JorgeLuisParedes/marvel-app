@@ -10,7 +10,7 @@ export const CharacterDetails = () => {
 						<div className='shrink-0'>
 							<img
 								className='mx-auto w-full sm:w-80'
-								src='src\assets\images\img-character.png'
+								src='../src/assets/images/img-character.png'
 								alt='Iron-man'
 							/>
 						</div>
@@ -39,7 +39,10 @@ export const CharacterDetails = () => {
 				<div className='custom-scrollbar flex w-full gap-4 overflow-x-scroll bg-white p-4'>
 					{items.map((_, index) => (
 						<div key={index} className='min-w-44'>
-							<img src='src/assets/images/img-comic.png' alt='' />
+							<img
+								src='..\src\assets\images\img-comic.png'
+								alt=''
+							/>
 							<h3 className='text-[16px] font-medium'>
 								Lorem ipsum dolor sit amet consectetur
 							</h3>
