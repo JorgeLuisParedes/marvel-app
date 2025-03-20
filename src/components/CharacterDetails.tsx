@@ -1,4 +1,4 @@
-import { FullHeart } from '../../ui';
+import { FullHeart } from '../ui';
 
 export const CharacterDetails = () => {
 	const items = Array.from({ length: 15 });

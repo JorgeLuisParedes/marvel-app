@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { LogoMarvel, FullHeart } from '../../ui';
+import { LogoMarvel, FullHeart } from '../ui';
 
 export const Header = () => {
 	return (

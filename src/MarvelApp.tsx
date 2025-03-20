@@ -1,4 +1,4 @@
-import { AppRouter } from './marvel/router/AppRouter';
+import { AppRouter } from './router/AppRouter';
 
 import '@fontsource/roboto-condensed/400.css';
 import '@fontsource/roboto-condensed/500.css';
