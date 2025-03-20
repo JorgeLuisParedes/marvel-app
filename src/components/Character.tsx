@@ -1,20 +1,21 @@
 import { Link } from 'react-router-dom';
+import { Character as CharacterType } from '../types/CharacterTypes';
 
-export const Character = () => {
+export const Character: React.FC<CharacterType> = ({ id, image, name }) => {
 	return (
 		<>
 			<Link
-				to={`/character`}
-				key={1}
+				to={`/character/${id}`}
 				className='group bg-black [clip-path:polygon(0_0,100%_0,100%_95%,93%_100%,100%_100%,0_100%)]'>
-				<div>
+				<div className='flex h-56 items-center justify-center py-6'>
 					<img
-						className='w-full object-cover'
-						src='src\assets\images\img-1.jpg'
+						className='h-full w-full object-contain'
+						src={image}
+						alt={name}
 					/>
 				</div>
 				<div className='relative flex items-center justify-between p-4 pb-6'>
-					<span className='text-white'>IRON MAN</span>
+					<span className='text-white uppercase'>{name}</span>
 					<svg
 						width='15'
 						height='14'
