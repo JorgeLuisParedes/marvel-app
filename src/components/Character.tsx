@@ -12,6 +12,7 @@ export const Character: React.FC<CharacterType> = ({ id, image, name }) => {
 						className='h-full w-full object-contain'
 						src={image}
 						alt={name}
+						loading='lazy'
 					/>
 				</div>
 				<div className='relative flex items-center justify-between p-4 pb-6'>
