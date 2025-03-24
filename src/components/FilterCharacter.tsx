@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchInput } from '../hooks';
 
 interface FilterCharacterProps {
 	setSearchTerm: (term: string) => void;
@@ -9,13 +9,7 @@ export const FilterCharacter: React.FC<FilterCharacterProps> = ({
 	setSearchTerm,
 	resultCount,
 }) => {
-	const [inputValue, setInputValue] = useState('');
-
-	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		const value = e.target.value;
-		setInputValue(value);
-		setSearchTerm(value);
-	};
+	const { value, onChange } = useSearchInput(setSearchTerm);
 
 	return (
 		<form className='mx-auto'>
@@ -40,8 +34,8 @@ export const FilterCharacter: React.FC<FilterCharacterProps> = ({
 				<input
 					type='search'
 					id='filterInput'
-					value={inputValue}
-					onChange={handleChange}
+					value={value}
+					onChange={onChange}
 					className='block w-full border-b border-b-black p-2 ps-8 text-black uppercase placeholder-gray-400 focus:ring-0 focus:outline-none'
 					placeholder='Search a character...'
 				/>
