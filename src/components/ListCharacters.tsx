@@ -1,29 +1,34 @@
 import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Character } from './Character';
 import { useGetCharactersQuery } from '../api/marvelApi';
 import { Character as CharacterType } from '../types/CharacterTypes';
+import { selectFavorites, toggleFavorite } from '../store/favoritesSlice';
 
 interface ListCharactersProps {
 	searchTerm: string;
 	setResultCount: (count: number) => void;
+	showFavoritesView: boolean;
 }
 
 export const ListCharacters: React.FC<ListCharactersProps> = ({
 	searchTerm,
 	setResultCount,
+	showFavoritesView,
 }) => {
+	const dispatch = useDispatch();
 	const { data, error, isLoading } = useGetCharactersQuery(null);
+	const favorites = useSelector(selectFavorites);
 
-	// Filtrar personajes por el término de búsqueda
-	const filteredCharacters: CharacterType[] =
-		data?.items.filter(({ name }: CharacterType) =>
-			name.toLowerCase().includes(searchTerm.toLowerCase())
-		) || [];
+	const baseList: CharacterType[] = showFavoritesView
+		? favorites
+		: data?.items || [];
 
-	// 🟢 MOVEMOS `useEffect` ARRIBA PARA QUE SE EJECUTE SIEMPRE
-	useEffect(() => {
-		setResultCount(filteredCharacters.length);
-	}, [filteredCharacters.length, setResultCount]);
+	const filteredCharacters = baseList.filter(({ name }) =>
+		name.toLowerCase().includes(searchTerm.toLowerCase())
+	);
+
+	const favoriteIds = new Set(favorites.map(char => char.id));
 
 	useEffect(() => {
 		if (!isLoading && !error) {
@@ -31,15 +36,29 @@ export const ListCharacters: React.FC<ListCharactersProps> = ({
 		}
 	}, [filteredCharacters.length, setResultCount, isLoading, error]);
 
-	// 🚀 Ahora los retornos tempranos están después del useEffect
-	if (isLoading) return <p>Cargando personajes...</p>;
-	if (error) return <p>Error al obtener personajes.</p>;
+	if (isLoading && !showFavoritesView) return <p>Cargando personajes...</p>;
+	if (error && !showFavoritesView) return <p>Error al obtener personajes.</p>;
 
 	return (
 		<div className='mt-7 grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-7'>
-			{filteredCharacters.map(({ id, image, name }) => (
-				<Character key={id} id={id} image={image} name={name} />
-			))}
+			{filteredCharacters.map(character => {
+				const isFavorite = favoriteIds.has(character.id);
+
+				const handleToggleFavorite = () => {
+					dispatch(toggleFavorite(character));
+				};
+
+				return (
+					<Character
+						key={character.id}
+						id={character.id}
+						image={character.image}
+						name={character.name}
+						isFavorite={isFavorite}
+						onToggleFavorite={handleToggleFavorite}
+					/>
+				);
+			})}
 		</div>
 	);
 };
