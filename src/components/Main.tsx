@@ -2,11 +2,7 @@ import { useState } from 'react';
 import { FilterCharacter } from './FilterCharacter';
 import { ListCharacters } from './ListCharacters';
 
-interface MainProps {
-	showFavoritesView: boolean;
-}
-
-export const Main: React.FC<MainProps> = ({ showFavoritesView }) => {
+export const Main: React.FC = () => {
 	const [searchTerm, setSearchTerm] = useState('');
 	const [resultCount, setResultCount] = useState(0);
 
@@ -19,7 +15,6 @@ export const Main: React.FC<MainProps> = ({ showFavoritesView }) => {
 			<ListCharacters
 				searchTerm={searchTerm}
 				setResultCount={setResultCount}
-				showFavoritesView={showFavoritesView}
 			/>
 		</section>
 	);

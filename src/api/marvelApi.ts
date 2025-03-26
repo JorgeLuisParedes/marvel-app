@@ -10,8 +10,11 @@ export const marvelApi = createApi({
 			query: () => `characters?page=1&limit=50`,
 			keepUnusedDataFor: 86400,
 		}),
+		getCharacterById: builder.query({
+			query: (id: string | number) => `characters/${id}`,
+		}),
 	}),
 	refetchOnMountOrArgChange: false,
 });
 
-export const { useGetCharactersQuery } = marvelApi;
+export const { useGetCharactersQuery, useGetCharacterByIdQuery } = marvelApi;

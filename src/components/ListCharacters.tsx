@@ -5,13 +5,11 @@ import { useCharactersList } from '../hooks';
 interface ListCharactersProps {
 	searchTerm: string;
 	setResultCount: (count: number) => void;
-	showFavoritesView: boolean;
 }
 
 export const ListCharacters: React.FC<ListCharactersProps> = ({
 	searchTerm,
 	setResultCount,
-	showFavoritesView,
 }) => {
 	const {
 		filteredCharacters,
@@ -19,10 +17,10 @@ export const ListCharacters: React.FC<ListCharactersProps> = ({
 		handleToggleFavorite,
 		isLoading,
 		error,
-	} = useCharactersList(searchTerm, showFavoritesView, setResultCount);
+	} = useCharactersList(searchTerm, setResultCount);
 
-	if (isLoading && !showFavoritesView) return <p>Cargando personajes...</p>;
-	if (error && !showFavoritesView) return <p>Error al obtener personajes.</p>;
+	if (isLoading) return <p>Cargando personajes...</p>;
+	if (error) return <p>Error al obtener personajes.</p>;
 
 	return (
 		<div className='mt-7 grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-7'>
