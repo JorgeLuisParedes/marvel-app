@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectFavoritesCount, showAll, showFavorites } from '../store';
-import { usePulseOnIncrement } from '../hooks';
-import { LogoMarvel, FullHeart } from '../ui';
+import { selectFavoritesCount, showAll, showFavorites } from '../../store';
+import { usePulseOnIncrement } from '../../hooks';
+import { FullHeart, LogoMarvel } from '.';
 
 export const Header: React.FC = () => {
 	const dispatch = useDispatch();

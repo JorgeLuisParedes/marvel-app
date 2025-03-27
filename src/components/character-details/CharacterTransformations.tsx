@@ -1,5 +1,3 @@
-// 📁 src/components/CharacterTransformations.tsx
-
 import { Transformation } from '../../types/CharacterTypes';
 
 interface Props {

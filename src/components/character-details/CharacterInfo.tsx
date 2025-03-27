@@ -1,5 +1,3 @@
-// 📁 src/components/character-details/CharacterInfo.tsx
-
 import { useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleFavorite, selectFavorites } from '../../store/favoritesSlice';

@@ -3,7 +3,7 @@
 import { Link } from 'react-router-dom';
 import { Character as CharacterType } from '../../types/CharacterTypes';
 import { useHover } from '../../hooks';
-import { HeartIcon } from '../../ui';
+import { HeartIcon } from '../ui';
 
 interface CharacterProps extends CharacterType {
 	isFavorite: boolean;
