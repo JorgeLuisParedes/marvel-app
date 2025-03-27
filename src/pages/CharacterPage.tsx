@@ -4,9 +4,7 @@ export const CharacterPage = () => {
 	return (
 		<>
 			<Header />
-			<div>
-				<CharacterDetails />
-			</div>
+			<CharacterDetails />
 		</>
 	);
 };
