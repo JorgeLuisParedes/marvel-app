@@ -1,11 +1,14 @@
+// 📁 src/components/character-list/Character.tsx
+
 import { Link } from 'react-router-dom';
-import { Character as CharacterType } from '../types/CharacterTypes';
-import { useHover } from '../hooks';
-import { HeartIcon } from '../ui';
+import { Character as CharacterType } from '../../types/CharacterTypes';
+import { useHover } from '../../hooks';
+import { HeartIcon } from '../../ui';
 
 interface CharacterProps extends CharacterType {
 	isFavorite: boolean;
 	onToggleFavorite: () => void;
+	className?: string;
 }
 
 export const Character: React.FC<CharacterProps> = ({
@@ -14,12 +17,13 @@ export const Character: React.FC<CharacterProps> = ({
 	name,
 	isFavorite,
 	onToggleFavorite,
+	className,
 }) => {
 	const { isHovered, bindHover } = useHover();
 
 	return (
 		<div
-			className='group bg-black [clip-path:polygon(0_0,100%_0,100%_95%,93%_100%,100%_100%,0_100%)]'
+			className={`group bg-black [clip-path:polygon(0_0,100%_0,100%_calc(100%-13px),calc(100%-7px)_100%,0_100%)] ${className} w-full`}
 			{...bindHover}>
 			<Link to={`/character/${id}`}>
 				<div className='flex h-56 items-center justify-center py-6'>

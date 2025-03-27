@@ -1,6 +1,6 @@
+import { useCharactersList } from '../../hooks';
 import { Character } from './Character';
-import { Character as CharacterType } from '../types/CharacterTypes';
-import { useCharactersList } from '../hooks';
+import { Character as CharacterType } from '../../types/CharacterTypes';
 
 interface ListCharactersProps {
 	searchTerm: string;
@@ -23,7 +23,7 @@ export const ListCharacters: React.FC<ListCharactersProps> = ({
 	if (error) return <p>Error al obtener personajes.</p>;
 
 	return (
-		<div className='mt-7 grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-7'>
+		<div className='mt-7 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7'>
 			{filteredCharacters.map((character: CharacterType) => (
 				<Character
 					key={character.id}

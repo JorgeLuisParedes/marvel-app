@@ -1,4 +1,4 @@
-import { useSearchInput } from '../hooks';
+import { useSearchInput } from '../../hooks';
 
 interface FilterCharacterProps {
 	setSearchTerm: (term: string) => void;
