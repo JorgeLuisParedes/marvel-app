@@ -24,7 +24,6 @@ export const uiSlice = createSlice({
 
 export const { showFavorites, showAll } = uiSlice.actions;
 
-// Selector
 export const selectShowFavoritesView = (state: RootState) =>
 	state.ui.showFavoritesView;
 

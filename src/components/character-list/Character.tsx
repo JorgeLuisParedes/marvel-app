@@ -1,14 +1,14 @@
-// 📁 src/components/character-list/Character.tsx
-
 import { Link } from 'react-router-dom';
 import { Character as CharacterType } from '../../types/CharacterTypes';
 import { useHover } from '../../hooks';
 import { HeartIcon } from '../ui';
+import { motion } from 'framer-motion';
 
 interface CharacterProps extends CharacterType {
 	isFavorite: boolean;
 	onToggleFavorite: () => void;
 	className?: string;
+	delay?: number;
 }
 
 export const Character: React.FC<CharacterProps> = ({
@@ -18,11 +18,15 @@ export const Character: React.FC<CharacterProps> = ({
 	isFavorite,
 	onToggleFavorite,
 	className,
+	delay = 0,
 }) => {
 	const { isHovered, bindHover } = useHover();
 
 	return (
-		<div
+		<motion.div
+			initial={{ opacity: 0, y: 10 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.4, delay }}
 			className={`group bg-black [clip-path:polygon(0_0,100%_0,100%_calc(100%-13px),calc(100%-7px)_100%,0_100%)] ${className} w-full`}
 			{...bindHover}>
 			<Link to={`/character/${id}`}>
@@ -47,6 +51,6 @@ export const Character: React.FC<CharacterProps> = ({
 
 				<div className='bg-marvel absolute top-0 left-0 -z-10 h-1.5 w-full transition-[height] duration-300 ease-in-out group-hover:h-full'></div>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
