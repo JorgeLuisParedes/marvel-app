@@ -1,5 +1,6 @@
 import { Transformation } from '../../types/CharacterTypes';
 import { Message } from '../ui';
+import { TransformationsIcon } from '../ui/icons';
 
 interface Props {
 	transformations: Transformation[];
@@ -18,33 +19,7 @@ export const CharacterTransformations: React.FC<Props> = ({
 				<Message
 					title='Sin transformaciones'
 					message='Este personaje no tiene transformaciones disponibles.'
-					icon={
-						<svg
-							width='40'
-							height='40'
-							viewBox='0 0 24 24'
-							fill='none'
-							xmlns='http://www.w3.org/2000/svg'>
-							<path
-								d='M4 4H20V20H4V4Z'
-								stroke='#EC1D24'
-								strokeWidth='2'
-								strokeLinecap='round'
-							/>
-							<path
-								d='M8 10H16'
-								stroke='#EC1D24'
-								strokeWidth='2'
-								strokeLinecap='round'
-							/>
-							<path
-								d='M8 14H13'
-								stroke='#EC1D24'
-								strokeWidth='2'
-								strokeLinecap='round'
-							/>
-						</svg>
-					}
+					icon={<TransformationsIcon />}
 				/>
 			) : (
 				<div className='relative'>

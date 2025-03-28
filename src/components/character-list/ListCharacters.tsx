@@ -1,7 +1,7 @@
 import { useCharactersList } from '../../hooks';
 import { Character } from './Character';
 import { Character as CharacterType } from '../../types/CharacterTypes';
-import { Message } from '../ui';
+import { ErrorIcon, Message } from '../ui';
 
 interface ListCharactersProps {
 	searchTerm: string;
@@ -20,23 +20,7 @@ export const ListCharacters: React.FC<ListCharactersProps> = ({
 			<Message
 				title='Error'
 				message='Ocurrió un problema al cargar los personajes.'
-				icon={
-					<svg
-						width='100'
-						height='100'
-						viewBox='0 0 24 24'
-						fill='none'
-						xmlns='http://www.w3.org/2000/svg'>
-						<circle cx='12' cy='12' r='10' fill='#EC1D24' />
-						<path
-							d='M12 7V13'
-							stroke='white'
-							strokeWidth='2'
-							strokeLinecap='round'
-						/>
-						<circle cx='12' cy='17' r='1.5' fill='white' />
-					</svg>
-				}
+				icon={<ErrorIcon />}
 			/>
 		);
 

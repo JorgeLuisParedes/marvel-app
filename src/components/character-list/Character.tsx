@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { Character as CharacterType } from '../../types/CharacterTypes';
 import { useHover } from '../../hooks';
 import { HeartIcon } from '../ui';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 
 interface CharacterProps extends CharacterType {
 	isFavorite: boolean;
