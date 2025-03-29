@@ -1,12 +1,10 @@
 import { Link } from 'react-router-dom';
 import { Character as CharacterType } from '../../types/CharacterTypes';
-import { useHover } from '../../hooks';
+import { useHover, useFavoriteCharacter } from '../../hooks';
 import { HeartIcon } from '../ui';
 import { motion } from 'motion/react';
 
 interface CharacterProps extends CharacterType {
-	isFavorite: boolean;
-	onToggleFavorite: () => void;
 	className?: string;
 	delay?: number;
 }
@@ -15,12 +13,15 @@ export const Character: React.FC<CharacterProps> = ({
 	id,
 	image,
 	name,
-	isFavorite,
-	onToggleFavorite,
 	className,
 	delay = 0,
 }) => {
 	const { isHovered, bindHover } = useHover();
+	const { isFavorite, handleToggleFavorite } = useFavoriteCharacter({
+		id,
+		name,
+		image,
+	});
 
 	return (
 		<motion.div
@@ -44,7 +45,7 @@ export const Character: React.FC<CharacterProps> = ({
 				<span className='text-white uppercase'>{name}</span>
 
 				<button
-					onClick={onToggleFavorite}
+					onClick={handleToggleFavorite}
 					className='z-10 cursor-pointer'>
 					<HeartIcon isFavorite={isFavorite} isHovered={isHovered} />
 				</button>

@@ -1,17 +1,11 @@
-import { useParams } from 'react-router-dom';
-import { useGetCharacterByIdQuery } from '../../api/marvelApi';
 import { CharacterInfo } from './CharacterInfo';
 import { CharacterTransformations } from './CharacterTransformations';
 import { ErrorIcon, Message } from '../ui';
 import { motion } from 'motion/react';
+import { useCharacterDetails } from '../../hooks/useCharacterDetails';
 
 export const CharacterDetails: React.FC = () => {
-	const { id } = useParams<{ id: string }>();
-	const {
-		data: character,
-		isLoading,
-		error,
-	} = useGetCharacterByIdQuery(id ?? '');
+	const { character, isLoading, error } = useCharacterDetails();
 
 	if (!isLoading && (error || !character)) {
 		return (

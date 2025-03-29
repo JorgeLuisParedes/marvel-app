@@ -12,10 +12,12 @@ export const ListCharacters: React.FC<ListCharactersProps> = ({
 	searchTerm,
 	setResultCount,
 }) => {
-	const { filteredCharacters, getIsFavorite, handleToggleFavorite, error } =
-		useCharactersList(searchTerm, setResultCount);
+			const { filteredCharacters, error } = useCharactersList(
+		searchTerm,
+		setResultCount
+	);
 
-	if (error)
+	if (error) {
 		return (
 			<Message
 				title='Error'
@@ -23,6 +25,7 @@ export const ListCharacters: React.FC<ListCharactersProps> = ({
 				icon={<ErrorIcon />}
 			/>
 		);
+	}
 
 	return (
 		<div className='mt-7 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7'>
@@ -32,8 +35,6 @@ export const ListCharacters: React.FC<ListCharactersProps> = ({
 					id={character.id}
 					image={character.image}
 					name={character.name}
-					isFavorite={getIsFavorite(character.id)}
-					onToggleFavorite={() => handleToggleFavorite(character)}
 					delay={index * 0.05}
 				/>
 			))}

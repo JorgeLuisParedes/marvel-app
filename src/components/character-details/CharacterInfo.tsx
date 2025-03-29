@@ -1,24 +1,19 @@
-import { useMemo, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { toggleFavorite, selectFavorites } from '../../store/favoritesSlice';
+import { useState } from 'react';
 import { CharacterDetails as CharacterType } from '../../types/CharacterTypes';
 import { HeartIcon } from '../ui';
+import { useFavoriteCharacter } from '../../hooks';
 
 interface Props {
 	character: CharacterType;
 }
 
 export const CharacterInfo: React.FC<Props> = ({ character }) => {
-	const dispatch = useDispatch();
-	const favorites = useSelector(selectFavorites);
 	const [isClicked, setIsClicked] = useState(false);
+	const { isFavorite, handleToggleFavorite } =
+		useFavoriteCharacter(character);
 
-	const isFavorite = useMemo(() => {
-		return favorites.some(fav => fav.id === character.id);
-	}, [favorites, character.id]);
-
-	const handleToggleFavorite = () => {
-		dispatch(toggleFavorite(character));
+	const handleClick = () => {
+		handleToggleFavorite();
 		setIsClicked(true);
 		setTimeout(() => setIsClicked(false), 300);
 	};
@@ -40,7 +35,7 @@ export const CharacterInfo: React.FC<Props> = ({ character }) => {
 								{character.name}
 							</h1>
 							<button
-								onClick={handleToggleFavorite}
+								onClick={handleClick}
 								className={`transform cursor-pointer transition duration-300 ease-in-out ${
 									isClicked ? 'scale-110 opacity-80' : ''
 								}`}>
