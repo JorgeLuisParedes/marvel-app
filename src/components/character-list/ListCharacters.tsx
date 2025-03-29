@@ -12,7 +12,7 @@ export const ListCharacters: React.FC<ListCharactersProps> = ({
 	searchTerm,
 	setResultCount,
 }) => {
-			const { filteredCharacters, error } = useCharactersList(
+	const { filteredCharacters, error } = useCharactersList(
 		searchTerm,
 		setResultCount
 	);
