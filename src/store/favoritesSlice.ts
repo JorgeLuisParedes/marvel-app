@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Character } from '../types/CharacterTypes';
+import { Character } from 'types/CharacterTypes';
 import { RootState } from './store';
 
-interface FavoritesState {
+export interface FavoritesState {
 	favorites: Character[];
 }
 

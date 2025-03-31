@@ -6,6 +6,27 @@
 			"DOM",
 			"ES2020"
 		],
+		"baseUrl": "./src",
+		"paths": {
+			"store/*": [
+				"store/*"
+			],
+			"hooks/*": [
+				"hooks/*"
+			],
+			"components/*": [
+				"components/*"
+			],
+			"pages/*": [
+				"pages/*"
+			],
+			"router/*": [
+				"router/*"
+			],
+			"types/*": [
+				"types/*"
+			]
+		},
 		"moduleResolution": "node",
 		"esModuleInterop": true,
 		"jsx": "react-jsx",

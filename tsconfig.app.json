@@ -24,6 +24,27 @@
 		"noFallthroughCasesInSwitch": true,
 		"noUncheckedSideEffectImports": true,
 		"esModuleInterop": true,
+		"baseUrl": "./src",
+		"paths": {
+			"store/*": [
+				"store/*"
+			],
+			"hooks/*": [
+				"hooks/*"
+			],
+			"components/*": [
+				"components/*"
+			],
+			"pages/*": [
+				"pages/*"
+			],
+			"router/*": [
+				"router/*"
+			],
+			"types/*": [
+				"types/*"
+			]
+		}
 	},
 	"include": [
 		"src"

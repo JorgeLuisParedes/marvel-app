@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { RootState } from './store';
 
-interface UIState {
+export interface UIState {
 	showFavoritesView: boolean;
 }
 
