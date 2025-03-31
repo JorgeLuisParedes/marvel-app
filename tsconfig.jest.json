@@ -34,6 +34,7 @@
 		"skipLibCheck": true,
 		"forceConsistentCasingInFileNames": true,
 		"types": [
+			"node",
 			"jest",
 			"@testing-library/jest-dom",
 			"@testing-library/react"
