@@ -1,18 +1,21 @@
 interface HeartFilledProps {
 	color?: string;
 	size?: number;
+	'aria-label'?: string;
 }
 
 export const HeartFilled: React.FC<HeartFilledProps> = ({
 	color = '#EC1D24',
 	size = 14,
+	'aria-label': ariaLabel,
 }) => (
 	<svg
 		width={size}
 		height={size}
 		viewBox='0 0 13 12'
 		fill='none'
-		xmlns='http://www.w3.org/2000/svg'>
+		xmlns='http://www.w3.org/2000/svg'
+		aria-label={ariaLabel}>
 		<path
 			fillRule='evenodd'
 			clipRule='evenodd'

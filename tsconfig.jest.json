@@ -25,6 +25,9 @@
 			],
 			"types/*": [
 				"types/*"
+			],
+			"__tests__/*": [
+				"__tests__/*"
 			]
 		},
 		"moduleResolution": "node",

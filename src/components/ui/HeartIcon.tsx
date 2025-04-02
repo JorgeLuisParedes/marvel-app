@@ -11,8 +11,12 @@ export const HeartIcon: React.FC<HeartIconProps> = ({
 	isHovered = false,
 	size = 14,
 }) => {
-	if (!isFavorite) return <HeartOutlined size={size} />;
+	const ariaLabel = `favorite-${isFavorite}`;
+
+	if (!isFavorite) {
+		return <HeartOutlined size={size} aria-label={ariaLabel} />;
+	}
 
 	const color = isHovered ? '#FFFFFF' : '#EC1D24';
-	return <HeartFilled color={color} size={size} />;
+	return <HeartFilled color={color} size={size} aria-label={ariaLabel} />;
 };

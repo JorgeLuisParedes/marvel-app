@@ -13,6 +13,7 @@ const config: Config = {
 		'^types/(.*)$': '<rootDir>/src/types/$1',
 		'^api/(.*)$': '<rootDir>/src/api/$1',
 		'\\.(css|less|scss|sass)$': 'identity-obj-proxy',
+		'^__tests__/(.*)$': '<rootDir>/src/__tests__/$1',
 	},
 	testMatch: ['<rootDir>/src/**/*.(test|spec).(ts|tsx)'],
 	transform: {
