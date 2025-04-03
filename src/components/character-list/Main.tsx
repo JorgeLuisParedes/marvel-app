@@ -7,7 +7,7 @@ export const Main: React.FC = () => {
 	const [resultCount, setResultCount] = useState(0);
 
 	return (
-		<section className='mt-21 p-12 sm:mt-0'>
+		<main className='mt-21 p-12 sm:mt-0'>
 			<FilterCharacter
 				setSearchTerm={setSearchTerm}
 				resultCount={resultCount}
@@ -16,6 +16,6 @@ export const Main: React.FC = () => {
 				searchTerm={searchTerm}
 				setResultCount={setResultCount}
 			/>
-		</section>
+		</main>
 	);
 };
