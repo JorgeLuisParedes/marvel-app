@@ -12,10 +12,6 @@ interface RenderWithStoreOptions extends Omit<RenderOptions, 'wrapper'> {
 	withRouter?: boolean;
 }
 
-/**
- * Renderiza un componente envuelto en <Provider> (y opcionalmente en <MemoryRouter>)
- * para testear Redux + React Router de forma integrada.
- */
 export const renderWithStore = (
 	ui: ReactElement,
 	options: RenderWithStoreOptions = {}

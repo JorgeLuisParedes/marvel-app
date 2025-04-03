@@ -3,11 +3,7 @@
 		"tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
 		"target": "ES2020",
 		"useDefineForClassFields": true,
-		"lib": [
-			"ES2020",
-			"DOM",
-			"DOM.Iterable"
-		],
+		"lib": ["ES2020", "DOM", "DOM.Iterable"],
 		"module": "ESNext",
 		"skipLibCheck": true,
 		/* Bundler mode */
@@ -26,27 +22,13 @@
 		"esModuleInterop": true,
 		"baseUrl": "./src",
 		"paths": {
-			"store/*": [
-				"store/*"
-			],
-			"hooks/*": [
-				"hooks/*"
-			],
-			"components/*": [
-				"components/*"
-			],
-			"pages/*": [
-				"pages/*"
-			],
-			"router/*": [
-				"router/*"
-			],
-			"types/*": [
-				"types/*"
-			]
+			"store/*": ["store/*"],
+			"hooks/*": ["hooks/*"],
+			"components/*": ["components/*"],
+			"pages/*": ["pages/*"],
+			"router/*": ["router/*"],
+			"types/*": ["types/*"]
 		}
 	},
-	"include": [
-		"src"
-	]
+	"include": ["src"]
 }

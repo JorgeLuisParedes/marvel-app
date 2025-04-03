@@ -52,7 +52,7 @@ describe('useFavoriteCharacter (con renderWithStore)', () => {
 		const spy = jest.spyOn(store, 'dispatch');
 
 		renderWithStore(<TestComponent character={mockCharacter} />, {
-			store, // ✅ solo esto, sin preloadedState
+			store,
 		});
 
 		await userEvent.click(screen.getByText(/toggle/i));
