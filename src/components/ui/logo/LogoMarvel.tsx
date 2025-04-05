@@ -1,6 +1,8 @@
 export const LogoMarvel = () => {
 	return (
 		<svg
+			role='img'
+			aria-label='Logo de Marvel'
 			width='130'
 			height='52'
 			viewBox='0 0 130 52'
