@@ -1,7 +1,7 @@
 interface MessageProps {
 	title: string;
 	message: string;
-	icon?: React.ReactNode;
+	icon: React.ReactNode;
 }
 
 export const Message: React.FC<MessageProps> = ({ title, message, icon }) => {
