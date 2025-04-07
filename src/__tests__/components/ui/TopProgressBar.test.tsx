@@ -4,7 +4,6 @@ import * as marvelApi from 'api/marvelApi';
 import React, { MutableRefObject } from 'react';
 import { LoadingBarRef } from 'react-top-loading-bar';
 
-// ✅ Ahora importás los mocks de forma separada
 import {
 	continuousStart,
 	complete,
