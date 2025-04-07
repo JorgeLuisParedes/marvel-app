@@ -66,4 +66,19 @@ describe('useCharacterDetails', () => {
 
 		expect(result.current.error).toBe(fakeError);
 	});
+
+	it('retorna character undefined cuando no hay id en params', () => {
+		jest.spyOn(reactRouter, 'useParams').mockReturnValue({}); // id indefinido
+		(api.useGetCharacterByIdQuery as jest.Mock).mockReturnValue({
+			data: undefined,
+			isLoading: false,
+			error: null,
+		});
+
+		const { result } = renderHook(() => useCharacterDetails());
+
+		expect(result.current.character).toBeUndefined();
+		expect(result.current.isLoading).toBe(false);
+		expect(result.current.error).toBeNull();
+	});
 });
