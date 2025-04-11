@@ -8,6 +8,7 @@ export * from './character-list/Main';
 export * from './ui/Header';
 export * from './ui/HeartIcon';
 export * from './ui/Message';
+export * from './ui/ThemeToggle';
 export * from './ui/TopProgressBar';
 export * from './ui/icons/ErrorIcon';
 export * from './ui/icons/FullHeart';
