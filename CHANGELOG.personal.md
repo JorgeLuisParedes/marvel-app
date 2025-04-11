@@ -33,3 +33,17 @@ Este changelog registra los cambios técnicos introducidos en la rama de mejoras
     - Tabla con columnas de prioridad y dificultad.
     - Simbología visual clara (estrellas, bloques, íconos).
     - Leyenda final para facilitar lectura.
+
+---
+
+## [11-04-2025] – Primera versión funcional del modo oscuro
+
+**Rama:** `feature/dark-mode-toggle`
+
+- Se creó el componente `ThemeToggle` y se integró al `Header`.
+- Se implementó la lógica para alternar entre modo claro y oscuro a nivel global mediante `document.documentElement.classList.toggle('dark')`.
+- Aún no se aplican clases `dark:*` de Tailwind al layout general; eso se añadirá progresivamente en los próximos commits.
+- Actualmente utiliza íconos provisionales (emojis). Los íconos SVG personalizados serán añadidos posteriormente.
+
+> Estado del `improvement-plan.md`: **🟡 En progreso**
+

@@ -3,5 +3,4 @@ export * from './FullHeart';
 export * from './HeartFilled';
 export * from './HeartOutlined';
 export * from './SearchIcon';
-export * from './ThemeIcon';
 export * from './TransformationsIcon';

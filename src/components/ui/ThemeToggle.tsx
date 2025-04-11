@@ -4,7 +4,6 @@ export const ThemeToggle: React.FC = () => {
 	const [isDark, setIsDark] = useState(false);
 
 	useEffect(() => {
-		// Inicialmente detecta si el tema actual es oscuro
 		const hasDarkClass =
 			document.documentElement.classList.contains('dark');
 		setIsDark(hasDarkClass);
