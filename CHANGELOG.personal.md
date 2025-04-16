@@ -124,3 +124,21 @@ Este changelog registra los cambios técnicos introducidos en la rama de mejoras
 **Rama:** `refactor/improvements`
 
 - Se actualizó el enlace del archivo `PLAN_DE_MEJORAS.md` a `improvement-plan.md` en `README.personal.md` para mantener la coherencia con la estructura actual del proyecto.
+
+## [17-04-2025] – Persistencia del modo claro/oscuro con Redux
+
+**Rama:** `feature/dark-mode-persistence`
+
+- Se creó el slice `themeSlice` para manejar el estado del tema (`light` o `dark`) de forma global.
+- Se integró este slice al `store` principal y se añadió a la `whitelist` de `redux-persist`.
+- Se actualizó `MarvelApp` para aplicar automáticamente la clase `dark` al `<html>` al montar la app según el estado de Redux.
+- Se refactorizó `ThemeToggle` para:
+    - Eliminar estados locales (`useState`, `useEffect`).
+    - Leer directamente desde Redux.
+    - Despachar la acción `toggleTheme` al hacer clic.
+- Se confirmó persistencia entre sesiones vía `localStorage`.
+- Se validó visualmente en escritorio y dispositivos móviles.
+
+🔬 **Pendiente**: agregar pruebas unitarias para el slice `themeSlice` y el componente `ThemeToggle`.
+
+> Estado del `improvement-plan.md`: **🟡 En progreso (falta cobertura de tests)**
