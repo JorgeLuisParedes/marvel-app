@@ -7,7 +7,7 @@ export const Main: React.FC = () => {
 	const [resultCount, setResultCount] = useState(0);
 
 	return (
-		<main className='mt-21 p-12 sm:mt-0'>
+		<main className='mt-21 min-h-screen bg-white p-12 text-black sm:mt-0 dark:bg-zinc-900 dark:text-white'>
 			<FilterCharacter
 				setSearchTerm={setSearchTerm}
 				resultCount={resultCount}

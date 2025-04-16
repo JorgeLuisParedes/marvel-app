@@ -1,5 +1,7 @@
 @import 'tailwindcss';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
 	--color-marvel: #ec1d24;
 	--animate-favorite-pulse: favorite-pulse 0.6s ease-in-out;

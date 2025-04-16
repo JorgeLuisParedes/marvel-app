@@ -6,11 +6,13 @@ interface MessageProps {
 
 export const Message: React.FC<MessageProps> = ({ title, message, icon }) => {
 	return (
-		<div className='flex flex-col items-center justify-center py-12 text-center text-black'>
+		<div className='flex flex-col items-center justify-center py-12 text-center text-black dark:text-white'>
 			{icon && <div className='mb-4'>{icon}</div>}
 
 			<h2 className='text-2xl font-bold uppercase'>{title}</h2>
-			<p className='mt-2 text-sm text-black sm:text-base'>{message}</p>
+			<p className='mt-2 text-sm text-black sm:text-base dark:text-zinc-300'>
+				{message}
+			</p>
 		</div>
 	);
 };

@@ -4,6 +4,7 @@ import { usePulseOnIncrement, useFavoritesNavigation } from '../../hooks';
 
 import { LogoMarvel } from './logo';
 import { FullHeart } from './icons';
+import { ThemeToggle } from './ThemeToggle';
 
 export const Header: React.FC = () => {
 	const favoritesCount = useSelector(selectFavoritesCount);
@@ -17,13 +18,17 @@ export const Header: React.FC = () => {
 				<LogoMarvel />
 			</div>
 
-			<div
-				className='flex cursor-pointer items-center'
-				onClick={showFavoriteCharacters}>
-				<span className={animate ? 'animate-favorite-pulse' : ''}>
-					<FullHeart />
-				</span>
-				<span className='ml-1 text-white'>{favoritesCount}</span>
+			<div className='flex items-center gap-4'>
+				<div
+					className='flex cursor-pointer items-center'
+					onClick={showFavoriteCharacters}>
+					<span className={animate ? 'animate-favorite-pulse' : ''}>
+						<FullHeart />
+					</span>
+					<span className='ml-1 text-white'>{favoritesCount}</span>
+				</div>
+
+				<ThemeToggle />
 			</div>
 		</nav>
 	);

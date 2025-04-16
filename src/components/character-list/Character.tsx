@@ -28,7 +28,7 @@ export const Character: React.FC<CharacterProps> = ({
 			initial={{ opacity: 0, y: 10 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ duration: 0.4, delay }}
-			className={`group bg-black [clip-path:polygon(0_0,100%_0,100%_calc(100%-13px),calc(100%-7px)_100%,0_100%)] ${className} w-full`}
+			className={`group bg-black [clip-path:polygon(0_0,100%_0,100%_calc(100%-13px),calc(100%-7px)_100%,0_100%)] dark:bg-zinc-800 ${className} w-full`}
 			{...bindHover}>
 			<Link to={`/character/${id}`}>
 				<div className='flex h-56 items-center justify-center py-6'>

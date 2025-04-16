@@ -1,6 +1,7 @@
 export * from './Header';
 export * from './HeartIcon';
 export * from './Message';
+export * from './ThemeToggle';
 export * from './TopProgressBar';
 export * from './icons/ErrorIcon';
 export * from './icons/FullHeart';
