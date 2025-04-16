@@ -1,25 +1,21 @@
-import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../store';
+import { toggleTheme } from '../../store/themeSlice';
 
 export const ThemeToggle: React.FC = () => {
-	const [isDark, setIsDark] = useState(false);
+	const dispatch = useDispatch();
+	const theme = useSelector((state: RootState) => state.theme.mode);
 
-	useEffect(() => {
-		const hasDarkClass =
-			document.documentElement.classList.contains('dark');
-		setIsDark(hasDarkClass);
-	}, []);
-
-	const toggleTheme = () => {
-		document.documentElement.classList.toggle('dark');
-		setIsDark(prev => !prev);
+	const handleToggle = () => {
+		dispatch(toggleTheme());
 	};
 
 	return (
 		<button
-			onClick={toggleTheme}
+			onClick={handleToggle}
 			className='border-marvel text-marvel hover:bg-marvel ml-4 w-24 cursor-pointer border px-4 py-2 text-center text-sm uppercase hover:text-white'
 			aria-label='Toggle dark mode'>
-			{isDark ? 'Claro' : 'Oscuro'}
+			{theme === 'dark' ? 'Claro' : 'Oscuro'}
 		</button>
 	);
 };
