@@ -116,3 +116,11 @@ Este changelog registra los cambios técnicos introducidos en la rama de mejoras
 - Se confirmó visualmente que todos los componentes se adaptan correctamente en ambos modos.
 
 > Estado del `improvement-plan.md`: **🟢 Completado**
+
+---
+
+## [16-04-2025] – Corrección documental en README extendido
+
+**Rama:** `refactor/improvements`
+
+- Se actualizó el enlace del archivo `PLAN_DE_MEJORAS.md` a `improvement-plan.md` en `README.personal.md` para mantener la coherencia con la estructura actual del proyecto.
