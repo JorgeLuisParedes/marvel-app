@@ -26,4 +26,4 @@ Porque esta rama está pensada como un laboratorio técnico personal. La rama `m
 
 ## Progreso y mejoras
 
-Consulta el archivo [`PLAN_DE_MEJORAS.md`](./PLAN_DE_MEJORAS.md) para ver qué se está desarrollando, qué se ha completado y qué ideas están en lista de espera.
+Consulta el archivo [`improvement-plan.md`](./improvement-plan.md) para ver qué se está desarrollando, qué se ha completado y qué ideas están en lista de espera.
