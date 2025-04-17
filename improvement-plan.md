@@ -9,7 +9,7 @@ Este documento registra las ideas de mejora personal propuestas para la aplicaci
 | ⭐⭐      | 🔴     | Paginación o scroll infinito            | ██         | Optimizar la carga inicial de personajes dividiéndola en páginas o chunks.                                                               |
 | ⭐        | 🔴     | Internacionalización (i18n)             | ██         | Soporte multilenguaje usando `react-i18next` con selector de idioma.                                                                     |
 | ⭐⭐      | 🔴     | Accesibilidad mejorada (a11y)           | ███        | Incluir atributos semánticos y soporte de navegación por teclado.                                                                        |
-| ⭐⭐      | 🟡     | Modo oscuro persistente                 | ██         | Guardar preferencia del usuario en localStorage.                                                                                         |
+| ⭐⭐      | 🟢     | Modo oscuro persistente                 | ██         | Guardar preferencia del usuario en localStorage.                                                                                         |
 | ⭐        | 🔴     | Sincronización de favoritos en la nube  | ███        | Conectar favoritos a una API real o mock persistente.                                                                                    |
 
 > Prioridad: `⭐ Baja` · `⭐⭐ Media` · `⭐⭐⭐ Alta`
