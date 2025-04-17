@@ -142,3 +142,16 @@ Este changelog registra los cambios técnicos introducidos en la rama de mejoras
 🔬 **Pendiente**: agregar pruebas unitarias para el slice `themeSlice` y el componente `ThemeToggle`.
 
 > Estado del `improvement-plan.md`: **🟡 En progreso (falta cobertura de tests)**
+
+## [17-04-2025] – Pruebas unitarias para `themeSlice`
+
+**Rama:** `feature/dark-mode-persistence`
+
+- Se agregaron pruebas unitarias para el slice `themeSlice` que validan:
+    - Estado inicial por defecto.
+    - Alternancia entre modos con `toggleTheme`.
+    - Establecimiento explícito con `setTheme`.
+- Se utilizó el tipo `ThemeState` desde `types/ThemeTypes.ts` para mantener consistencia y seguridad de tipos.
+- Cobertura completa lograda para la lógica del reducer.
+
+> Estado del `improvement-plan.md`: **🟡 En progreso (falta test de UI para `ThemeToggle`)**
