@@ -125,6 +125,8 @@ Este changelog registra los cambios técnicos introducidos en la rama de mejoras
 
 - Se actualizó el enlace del archivo `PLAN_DE_MEJORAS.md` a `improvement-plan.md` en `README.personal.md` para mantener la coherencia con la estructura actual del proyecto.
 
+---
+
 ## [17-04-2025] – Persistencia del modo claro/oscuro con Redux
 
 **Rama:** `feature/dark-mode-persistence`
@@ -143,6 +145,8 @@ Este changelog registra los cambios técnicos introducidos en la rama de mejoras
 
 > Estado del `improvement-plan.md`: **🟡 En progreso (falta cobertura de tests)**
 
+---
+
 ## [17-04-2025] – Pruebas unitarias para `themeSlice`
 
 **Rama:** `feature/dark-mode-persistence`
@@ -155,3 +159,25 @@ Este changelog registra los cambios técnicos introducidos en la rama de mejoras
 - Cobertura completa lograda para la lógica del reducer.
 
 > Estado del `improvement-plan.md`: **🟡 En progreso (falta test de UI para `ThemeToggle`)**
+
+---
+
+## [17-04-2025] – Persistencia del modo claro/oscuro con Redux
+
+**Rama:** `feature/dark-mode-persistence`
+
+- Se creó el slice `themeSlice` para manejar el estado del tema (`light` o `dark`) de forma global.
+- Se integró este slice al `store` principal y se añadió a la `whitelist` de `redux-persist`.
+- Se actualizó `MarvelApp` para aplicar automáticamente la clase `dark` al `<html>` al montar la app según el estado de Redux.
+- Se refactorizó `ThemeToggle` para:
+    - Eliminar estados locales (`useState`, `useEffect`).
+    - Leer directamente desde Redux.
+    - Despachar la acción `toggleTheme` al hacer clic.
+- Se confirmó persistencia entre sesiones vía `localStorage`.
+- Se agregaron pruebas unitarias al `themeSlice`.
+- Se adaptaron y corrigieron los tests de integración para `ThemeToggle`, verificando:
+    - Visualización correcta según el estado.
+    - Dispatch correcto de acciones.
+- Se ajustaron `createTestStore`, `MockRootState` y `renderWithStore` para reflejar el nuevo estado global.
+
+> Estado del `improvement-plan.md`: **🟢 Completado**
