@@ -10,6 +10,7 @@ import favoritesReducer, {
 
 import { Character } from 'types/CharacterTypes';
 import { UIState } from 'store/uiSlice';
+import { ThemeState } from 'types/ThemeTypes';
 import { marvelApi } from 'api/marvelApi';
 import { PersistPartial } from 'redux-persist/es/persistReducer';
 
@@ -22,6 +23,7 @@ const mockCharacter: Character = {
 type MockRootState = {
 	favorites: FavoritesState;
 	ui: UIState;
+	theme: ThemeState;
 	[marvelApi.reducerPath]: ReturnType<typeof marvelApi.reducer>;
 	_persist: PersistPartial['_persist'];
 };
@@ -29,6 +31,7 @@ type MockRootState = {
 const mockRootState: MockRootState = {
 	favorites: { favorites: [mockCharacter] },
 	ui: { showFavoritesView: false },
+	theme: { mode: 'light' },
 	[marvelApi.reducerPath]: {} as ReturnType<typeof marvelApi.reducer>,
 	_persist: {
 		version: 1,

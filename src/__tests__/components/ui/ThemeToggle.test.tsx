@@ -1,27 +1,37 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { screen, fireEvent } from '@testing-library/react';
+import { renderWithStore } from '../../utils/renderWithStore';
 import { ThemeToggle } from 'components/ui';
+import { ThemeState } from 'types/ThemeTypes';
 
 describe('ThemeToggle', () => {
-	beforeEach(() => {
-		document.documentElement.classList.remove('dark');
-	});
+	const initialThemeState: ThemeState = { mode: 'light' };
 
 	it('muestra "Oscuro" si el modo inicial es claro', () => {
-		render(<ThemeToggle />);
+		renderWithStore(<ThemeToggle />, {
+			preloadedState: {
+				theme: initialThemeState,
+			},
+		});
 		expect(screen.getByRole('button')).toHaveTextContent('Oscuro');
 	});
 
 	it('muestra "Claro" si el modo inicial es oscuro', () => {
-		document.documentElement.classList.add('dark');
-		render(<ThemeToggle />);
+		renderWithStore(<ThemeToggle />, {
+			preloadedState: {
+				theme: { mode: 'dark' },
+			},
+		});
 		expect(screen.getByRole('button')).toHaveTextContent('Claro');
 	});
 
 	it('al hacer clic alterna el modo oscuro', () => {
-		render(<ThemeToggle />);
+		const { store } = renderWithStore(<ThemeToggle />, {
+			preloadedState: {
+				theme: initialThemeState,
+			},
+		});
 		const btn = screen.getByRole('button');
 		fireEvent.click(btn);
-		expect(document.documentElement.classList.contains('dark')).toBe(true);
-		expect(btn).toHaveTextContent('Claro');
+		expect(store.getState().theme.mode).toBe('dark');
 	});
 });
